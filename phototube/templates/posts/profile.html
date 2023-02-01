@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+  Профайл пользователя {{ author.username }}
+{% endblock title %}
+{% block content %}
+  <h1>Автор: {{ author.get_full_name}} {{ author.username }}</h1>
+  <h6 style="margin-bottom: 20px">
+    Создано постов: {{ author.posts.count }} |
+    Подписчиков: {{ author.following.count }} |
+    Подписок: {{ author.follower.count }} |
+    Оставил комментариев: {{ author.comments.count }}
+  </h6>
+  <div class="mb-5">
+    {% if user != author and user.is_authenticated %}
+      {% if following %}
+        <a class="btn btn-lg btn-light"
+          href="{% url 'posts:profile_unfollow' author.username %}"
+          role="button">Отписаться</a>
+      {% else %}
+          <a class="btn btn-lg btn-primary"  href="{% url 'posts:profile_follow' author.username %}"
+          role="button">Подписаться</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="row" style="margin-top: -60px">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for post in page_obj %}
+        {% include "posts/includes/post_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

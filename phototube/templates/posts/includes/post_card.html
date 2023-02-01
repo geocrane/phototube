@@ -1,0 +1,38 @@
+{% load static %}
+    <div class="col-md-4">
+      <div class="card">
+        {% load thumbnail %}
+        {% if post.image %}
+        <a href="{% url 'posts:post_detail' post.id %}">{% thumbnail post.image "778x370" crop="center" upscale=True as im %}
+          <img class="card-img-top" src="{{ im.url }}" alt="Card image cap">
+        {% endthumbnail %}</a>
+        {% else %}
+            <img class="card-img-top" src={% static "img/not_image.png" %} alt="Not image">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">
+            {% if not group %}
+              {% if post.group %}
+                <a href={% url 'posts:group_list' post.group.slug %}>
+                  #{{ post.group.slug }}
+                </a>
+              {% else %}
+                #жанр_не_выбран
+              {% endif %}
+            {% endif %}
+          </h5>
+          <p class="card-text">
+            Комментариев: {{ post.comments.count }}
+            {{ post.text|linebreaks|truncatechars:100 }}
+          </p>
+          <div class="card-footer bg-transparent">
+              {% if not author %}
+              <a href="{% url 'posts:profile' post.author.username %}">
+                {{ post.author.username }}
+              </a>
+              {% endif %}
+              <span style="float:right"> <a href="{% url 'posts:post_detail' post.id %}">подробнее</a></span>
+          </div>
+        </div>
+      </div>
+    </div>

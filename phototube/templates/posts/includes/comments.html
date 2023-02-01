@@ -1,0 +1,25 @@
+{% for comment in post.comments.all %}
+<hr>
+  <div class="media mb-4">
+    <div class="media-body">
+      <p class="mt-0">
+        <a href="{% url 'posts:profile' comment.author.username %}">
+          {{ comment.author.username }}
+        </a>
+        (оставлен: {{ comment.pub_date|date:"d.m.Y" }})
+      </p>
+      <p>{{ comment.text|linebreaks }}</p>
+    </div>
+  </div>
+{% endfor %}
+{% if user.is_authenticated %}
+  <div class="card my-4">
+    <h5 class="card-header">Добавьте свой комментарий:</h5>
+    <div class="card-body">
+      <form method="post" action="{% url 'posts:add_comment' post.id %}">
+        {% include "includes/form.html" %}
+        <button type="submit" class="btn btn-primary">Отправить</button>
+      </form>
+    </div>
+  </div>
+{% endif %}

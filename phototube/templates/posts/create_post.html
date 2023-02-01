@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+  {% if form.is_edit %} Редактировать {% else %} Опубликовать фотографию {% endif %}
+{% endblock %}
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-8 p-5">
+      <div class="card">
+        <div class="card-header">
+          {% if form.is_edit %} Редактировать {% else %} Опубликовать фотографию {% endif %}
+        </div>
+        <div class="card-body">
+          <form method="post" action="" enctype="multipart/form-data">
+            {% include "includes/form.html" %}
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary">
+                {% if form.is_edit %} Изменить {% else %} Сохранить {% endif %}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
