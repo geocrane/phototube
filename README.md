@@ -32,17 +32,23 @@ git clone https://github.com/geocrane/phototube.git
 Для запуска на локальном сервере поочередно выполните:
 ```
 python3 -m venv venv
-
+```
+```
 source venv/bin/activate
-
+```
+```
 python3 -m pip install --upgrade pip
-
+```
+```
 pip install -r requirements.txt
-
+```
+```
 cd phototube
-
+```
+```
 python3 manage.py migrate
-
+```
+```
 python3 manage.py runserver
 ```
 
