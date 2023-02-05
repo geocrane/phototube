@@ -1,7 +1,12 @@
-# PhotoTube
-**Бэкенд социальной сети для фотографов.**
+<h1 align="center">PhotoTube</a></h1>
+<p align="center">**Бэкенд социальной сети для фотографов.**</p>
 
-#### Реализовано:
+<p align="center"><img src="https://img.shields.io/badge/made%20by-geocrane-green">
+<img src=https://img.shields.io/badge/Python-%203.7-blue>
+<img src=https://img.shields.io/badge/Django%20-%202.2.16-red>
+</p>
+
+## Реализовано:
 - Администрирование сайта, управление пользователями, сообщениями, группами, подписками.
 - Регистрация, авторизация пользователя, сброс пароля по почте.
 - Создания поста, включая загрузку изображения, описание и выбор жанра.
@@ -12,35 +17,39 @@
 - Пагинация, кэширование страниц
 - Тестирование перечисленных функций с помощью Unittest.
 
+## Используется:
+- Python 3.7
+- Django 2.2.16
+- SQLite 3
 
-#### Используемые технологии:
-+ Python 3.7
-+ Django 2.2.16
-+ SQLite3
-+ Unittest
+## Запуск проекта (на примере Linux):
+Cклонируйте репозиторий на локальный пк:
+```
+git clone https://github.com/geocrane/phototube.git
+```
+Войдите в склонированный репозиторий.
+Для запуска на локальном сервере поочередно выполните:
+```
+python3 -m venv venv
 
+source venv/bin/activate
 
-#### Установка:
-Создать виртуальное окружение:
-```sh
-$ python -m venv venv
+python3 -m pip install --upgrade pip
+
+pip install -r requirements.txt
+
+cd phototube
+
+python3 manage.py migrate
+
+python3 manage.py runserver
 ```
-Установить зависимости:
-```sh
-$ pip install -r requirements.txt
-```
-Примененить миграции:
-```sh
-$ python manage.py migrate
-```
-Запустить сервер-разработчика:
-```sh
-$ python manage.py runserver
-```
+
 Приложение в браузере по адресу:
 ```sh
 http://127.0.0.1:8000/
 ```
 
 
-##### Разработчик: [Сергей Журавлев](https://github.com/geocrane)
+
+<h3 align="center">developed by: Sergey S. Zhuravlev</h5>
