@@ -23,7 +23,7 @@
 - SQLite 3
 - Unittest
 
-## Запуск проекта (на примере Linux):
+## Запуск (на примере Linux):
 Cклонируйте репозиторий на локальный пк:
 ```
 git clone https://github.com/geocrane/phototube.git
