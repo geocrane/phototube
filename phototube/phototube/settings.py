@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
     'sorl.thumbnail',
-    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
