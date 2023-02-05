@@ -24,7 +24,7 @@
 - Unittest
 
 ## Запуск (на примере Linux):
-Cклонируйте репозиторий на локальный пк:
+Cклонируйте репозиторий:
 ```
 git clone https://github.com/geocrane/phototube.git
 ```
