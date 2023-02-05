@@ -1,12 +1,11 @@
 <h1 align="center">PhotoTube</a></h1>
-<p align="center">**Бэкенд социальной сети для фотографов.**</p>
 
 <p align="center"><img src="https://img.shields.io/badge/made%20by-geocrane-green">
 <img src=https://img.shields.io/badge/Python-%203.7-blue>
 <img src=https://img.shields.io/badge/Django%20-%202.2.16-red>
 </p>
 
-## Реализовано:
+Бэкенд социальной сети для фотографов. Реализован следующий функционал:
 - Администрирование сайта, управление пользователями, сообщениями, группами, подписками.
 - Регистрация, авторизация пользователя, сброс пароля по почте.
 - Создания поста, включая загрузку изображения, описание и выбор жанра.
@@ -17,12 +16,12 @@
 - Пагинация, кэширование страниц
 - Тестирование перечисленных функций с помощью Unittest.
 
-## Используется:
+### Используется:
 - Python 3.7
 - Django 2.2.16
 - SQLite 3
 
-## Запуск проекта (на примере Linux):
+### Запуск проекта (на примере Linux):
 Cклонируйте репозиторий на локальный пк:
 ```
 git clone https://github.com/geocrane/phototube.git
@@ -45,11 +44,10 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-Приложение в браузере по адресу:
-```sh
+Приложение доступно по адресу:
+```
 http://127.0.0.1:8000/
 ```
 
-
-
+<p></p>
 <h3 align="center">developed by: Sergey S. Zhuravlev</h5>
